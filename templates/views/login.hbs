@@ -4,32 +4,40 @@
     {{>headerlinks}}
 
     </head>
-<body>
+    <body>
     {{>navbar}}
-    <div class="container mt-5">
-  <h1>Login</h1>
+    <div style="background-image:url('http://adwallpapers.xyz/uploads/posts/80013-the-black-cat-art-painting-4k-ultra-hd-wallpaper.jpg');  background-position:center;background-repeat: no-repeat;background-size: cover;height:100%">
+    <div class="container mt-5" >
+  <div style="margin-left: 16px;"><h1>Login</h1></div>
 
   <div class="row">
-    <div class="col-sm-8">
+    <div class="col-sm-5">
       <div class="card">
-        <div class="card-body">
+        <div class="card-body" style="margin-bottom:20px">
 
           <!-- Makes POST request to /login route -->
           <form action="/login" method="POST">
-            <div class="form-group">
+            <div class="form-group"style="margin-bottom:15px">
               <label for="email">Email</label>
-              <input type="email" class="form-control" name="username">
+              <input style="padding:15px" type="email" class="form-control" name="username">
             </div>
             <div class="form-group">
               <label for="password">Password</label>
-              <input type="password" class="form-control" name="password">
+              <input style="padding:15px" type="password" class="form-control" name="password">
             </div>
-            <button type="submit" class="btn btn-dark">Login</button>
+            <button type="submit" class="btn btn-dark">L0GIN</button>
           </form>
 
         </div>
       </div>
+     <h5 style="text-align:center;text-transform:uppercase;"><strong>If Not Yet Registered Please register from Here:</strong>  </h5>
+   <div style="text-align:center;"><a href="/register"> <button style="padding:3px"class="btn btn-dark">Register</button> </a>
+    
     </div>
+    </div>
+    </div>
+   
+               
 
     <!-- <div class="col-sm-4">
       <div class="card">
