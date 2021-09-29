@@ -9,6 +9,8 @@ const bodyParser = require('body-parser')
 const session = require('express-session')
 const passport = require('passport')
 const passportLocalMongoose = require('passport-local-mongoose')
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const findOrCreate = require('mongoose-findorcreate')
 // const requestPromise = require('request-promise')
 // const requests = require('requests');
 
@@ -50,17 +52,49 @@ mongoose.connect(process.env.MONGODB_ID)
 
 const userSchema = new mongoose.Schema({
     email: String,
-    password: String
+    password: String,
+    googleId: String,
+    secret: String
 });
 
 userSchema.plugin(passportLocalMongoose)
+userSchema.plugin(findOrCreate)
 
 const User = new mongoose.model("User", userSchema); //user as a collection name
 
 passport.use(User.createStrategy());
 
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+// passport.serializeUser(User.serializeUser());
+// passport.deserializeUser(User.deserializeUser());
+passport.serializeUser(function (user, done) {
+    done(null, user.id);
+});
+
+passport.deserializeUser(function (id, done) {
+    User.findById(id, function (err, user) {
+        done(err, user);
+    });
+});
+
+//************************Google Authentication***************************************************/
+
+passport.use(new GoogleStrategy({
+        clientID: process.env.GOOGLE_CLIENT_ID,
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+        callbackURL: "http://localhost:2000/auth/google/encephlon",
+        // This option tells the strategy to use the userinfo endpoint instead
+        userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
+    },
+    function (accessToken, refreshToken, profile, cb) {
+        console.log(profile);
+        User.findOrCreate({
+            username: profile.displayName,
+            googleId: profile.id
+        }, function (err, user) {
+            return cb(err, user);
+        });
+    }
+));
 
 
 //***************************Routing*****************************************
@@ -68,6 +102,19 @@ passport.deserializeUser(User.deserializeUser());
 app.get("/", (req, res) => {
     res.render("index");
 })
+app.get("/auth/google",
+    passport.authenticate('google', {
+        scope: ['profile']
+    }) //google strategy
+)
+app.get('/auth/google/encephlon',
+    passport.authenticate('google', {
+        failureRedirect: '/login'
+    }),
+    function (req, res) {
+        // Successful authentication, redirect home.
+        res.redirect('/home');
+    });
 
 app.get("/login", (req, res) => {
     res.render("login")
