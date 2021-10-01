@@ -125,6 +125,12 @@ app.get("/register", (req, res) => {
 app.get("/home", (req, res) => {
     res.render("home")
 })
+app.get("/floodMaps", (req, res) => {
+    res.render("floodMaps");
+})
+app.get("/about", (req, res) => {
+    res.render("about")
+})
 
 // app.get("*", (req, res) => {
 //     res.render("404error", {

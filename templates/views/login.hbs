@@ -6,7 +6,7 @@
     </head>
     <body>
     {{>navbar}}
-    <div style="background-image:url('http://adwallpapers.xyz/uploads/posts/80013-the-black-cat-art-painting-4k-ultra-hd-wallpaper.jpg');  background-position:center;background-repeat: no-repeat;background-size: cover;height:100%">
+    <div style="background-image:url(images/log.jpg);  background-position:center;background-repeat: no-repeat;background-size: cover; height:1000px">
     <div class="container mt-5" >
   <div style="margin-left: 16px;"><h1>Login</h1></div>
 
@@ -27,16 +27,39 @@
             </div>
             <button type="submit" class="btn btn-dark">L0GIN</button>
           </form>
+          
 
         </div>
       </div>
+      
      <h5 style="text-align:center;text-transform:uppercase;"><strong>If Not Yet Registered Please register from Here:</strong>  </h5>
    <div style="text-align:center;"><a href="/register"> <button style="padding:3px"class="btn btn-dark">Register</button> </a>
     
     </div>
+</div>
+    <div class="col-sm-4">
+      <div class="card social-block">
+        <div class="card-body">
+          <a style="padding:10px"class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
+            <i class="fab fa-google"></i>
+           <div style="margin-left:30px">Log In from Google</div> 
+          </a>
+          {{!-- <a style="padding:10px"class="btn btn-block btn-social btn-facebook" href="/auth/google" role="button">
+            <i class="fab fa-facebook"></i>
+           <div style="margin-left:30px">Log In from Facebook</div> 
+          </a> --}}
+          
+        </div>
+        
+      </div>
+    </div> 
+
+  
+     
+
+
     </div>
-    </div>
-   
+  
                
 
     <!-- <div class="col-sm-4">
