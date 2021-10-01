@@ -131,8 +131,20 @@ app.get("/floodMaps", (req, res) => {
 app.get("/contact", (req, res) => {
     res.render("contact")
 })
-app.get("/functions", (req, res) => {
-    res.render("functions")
+app.get("/about", (req, res) => {
+    res.render("about")
+})
+app.get("/info", (req, res) => {
+    res.render("info")
+})
+app.get("/beforeFlood", (req, res) => {
+    res.render("beforeFlood")
+})
+app.get("/duringFlood", (req, res) => {
+    res.render("duringFlood")
+})
+app.get("/afterFlood", (req, res) => {
+    res.render("afterFlood")
 })
 app.get("/functions", (req, res) => {
     res.render("functions")
