@@ -128,8 +128,14 @@ app.get("/home", (req, res) => {
 app.get("/floodMaps", (req, res) => {
     res.render("floodMaps");
 })
-app.get("/about", (req, res) => {
-    res.render("about")
+app.get("/contact", (req, res) => {
+    res.render("contact")
+})
+app.get("/functions", (req, res) => {
+    res.render("functions")
+})
+app.get("/functions", (req, res) => {
+    res.render("functions")
 })
 
 // app.get("*", (req, res) => {
