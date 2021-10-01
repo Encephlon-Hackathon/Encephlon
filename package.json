@@ -34,5 +34,6 @@
     "path": "^0.12.7",
     "request-promise": "^4.2.6",
     "requests": "^0.3.0"
-  }
+  },
+  "devDependencies": {}
 }

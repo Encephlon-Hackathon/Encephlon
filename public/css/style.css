@@ -54,8 +54,52 @@ body {
     background-color: grey;
 }
 
+/*  */
+.form-btn{
+    margin-top: 12px;
+}
 
+.user-form{
+    top: 20%;
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.custom-file{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-top: 100px;
+    /* margin-left: 300px; */
+    margin-inline: auto;
+    /* padding: 20px; */
+}
 
+.custom-file-label{
+    padding: 20px;
+    font-size: 21px;
+}
+
+.img-input{
+    padding: 20px;
+}
+
+.form-labels{
+    font-size: 25px;
+    margin-top: -41px;
+}
+
+.img-file{
+    margin-top: 150px;
+}
+
+.btn{
+    margin-top: 25px;
+    margin-left: 426px;
+
+}
 /* main header  */
 
 .main_header_left {

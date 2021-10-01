@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    {{>headerlinks}}
+
+    </head>
+<body>
+     {{>navbar}}
+     
+     {{!-- <div style="background-image:url('images/vector-forest.jpg');  background-position:center;background-repeat: no-repeat;background-size: cover;height:100%">
+    <div class="container mt-5">
+        
+  <h1 style="margin-left:16px">Let Us Know</h1>
+    </div>
+    </div> --}}
+
+  <form class="user-form">
+    {{!-- <div class="form-group">
+      <label class="form-labels">Name</label>
+      <input type="text" class="form-control form-control-lg" placeholder="Enter name">
+
+      <label class="form-labels">Email address</label>
+      <input type="email" class="form-control form-control-lg" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+    </div> --}}
+    
+    <div class="custom-file img-file">
+    <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+    <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+    <div class="invalid-feedback">Invalid file feedback</div>
+  </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+{{>footer}}
+</body>

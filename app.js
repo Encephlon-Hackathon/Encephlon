@@ -137,6 +137,9 @@ app.get("/functions", (req, res) => {
 app.get("/functions", (req, res) => {
     res.render("functions")
 })
+app.get("/form", (req, res) => {
+    res.render("form")
+})
 
 // app.get("*", (req, res) => {
 //     res.render("404error", {
