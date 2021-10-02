@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    {{>headerlinks}}
+
+    </head>
+<body>
+
+    {{>navbarHome}}
+
+    
+    <div class="container-fluid main_header">
+      <div class="row">
+      <div class="col-md-10 col-12 mx-auto">
+        <div class="row">
+            <div class="col-md-6 col-12 main_header_right align-items-center">
+                <figure>
+                    {{!-- <img src="images/abouts.jpg" alt="sam" class="img-fluid" title="Flood Unit" > --}}
+
+                    <video width="450" height="550" autoplay>
+                     <source src="images/info.mp4" type="video/mp4">
+                      {{!-- Your browser does not support the video tag. --}}
+                    </video>
+                </figure>
+    
+              </div>
+       
+         <div class="col-md-6 col-12 main_header_left" >
+            <p>Flood Unit Info Site</p>
+            <h1>FLOOD <span class="text_clr">Information </span>via Team Encephlon</h1>
+            <div style="padding-bottom: 5px;"><a href="/beforeFlood" target="_blank"><button>Before Floods</button></a></div>
+            <div style="padding-bottom: 5px;"><a href="/duringFlood" target="_blank"><button>During Floods</button></a></div>
+            <div style="padding-bottom: 5px;margin-left:5px"><a href="/afterFlood" target="_blank"><button>After Floods</button></a></div>
+            
+          </div>
+          
+          
+        </div>
+        </div>
+        </div>
+        </div>
+
+        
+      <div >{{>footer}} </div>
+        
+
+
+</body>
+
+</html>
