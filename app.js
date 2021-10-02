@@ -125,8 +125,8 @@ app.get("/register", (req, res) => {
 app.get("/home", (req, res) => {
     res.render("home")
 })
-app.get("/floodMaps", (req, res) => {
-    res.render("floodMaps");
+app.get("/weatherMaps", (req, res) => {
+    res.render("map");
 })
 app.get("/contact", (req, res) => {
     res.render("contact")
