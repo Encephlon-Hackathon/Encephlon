@@ -119,6 +119,9 @@ app.get('/auth/google/encephlon',
 app.get("/login", (req, res) => {
     res.render("login")
 })
+app.get("/prediction", (req, res) => {
+    res.render("prediction")
+})
 app.get("/register", (req, res) => {
     res.render("register")
 })
@@ -127,6 +130,9 @@ app.get("/home", (req, res) => {
 })
 app.get("/weatherMaps", (req, res) => {
     res.render("map");
+})
+app.get("/graph", (req, res) => {
+    res.render("graph")
 })
 app.get("/contact", (req, res) => {
     res.render("contact")
@@ -173,6 +179,19 @@ app.get("/logout", function (req, res) {
 
 
 //***post section with (passport local mongoose)&(passport.js) ********************************
+
+app.post("/prediction", function (req, res) {
+
+    date = new Date(req.body.date)
+    month = ("0" + (date.getMonth() + 1)).slice(-2)
+    year = date.getFullYear()
+    day = ("0" + date.getDate()).slice(-2)
+    console.log(day, month)
+
+
+    res.redirect('http://cwc.gov.in/sites/default/files/dfsitrepca-' + day + month + year + '.pdf')
+})
+
 
 app.post("/register", function (req, res) {
 
